@@ -10,10 +10,8 @@ const port = process.env.PORT;
 const app = express();
 app.use(express.json());
 const corsOptions = {
-    origin: process.env.CLIENT_URL,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-    credentials: true, 
-};  
+    origin: '*', 
+};
 app.use(cors(corsOptions));
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/account', accountRouter);
